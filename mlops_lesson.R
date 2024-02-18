@@ -126,6 +126,40 @@ final_fit %>%
   autoplot()
 
 # Create vetiver model
+final_fit_to_deploy <-final_fit %>% 
+  extract_workflow()
+
+v <- vetiver_model(
+  final_fit_to_deploy,
+  model_name = "penguins_model"
+)
+
+model_board <- board_folder(path = "pins-r", versioned = TRUE)
+model_board %>% vetiver_pin_write(v)
+model_board %>% 
+  vetiver_write_plumber("penguins_model")
+write_board_manifest(model_board)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

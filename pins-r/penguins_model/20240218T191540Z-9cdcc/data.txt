@@ -1,0 +1,17 @@
+file: penguins_model.rds
+file_size: 162312
+pin_hash: 9cdcc78226d7bc7d
+type: rds
+title: 'penguins_model: a pinned list'
+description: A brulee classification modeling workflow
+tags: ~
+urls: ~
+created: 20240218T191540Z
+api_version: 1
+user:
+  required_pkgs:
+  - brulee
+  - parsnip
+  - recipes
+  - workflows
+  renv_lock: ~
