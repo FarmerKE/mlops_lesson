@@ -12,8 +12,9 @@ if (FALSE) {
     library(recipes)
     library(workflows)
 }
-b <- board_url(list(penguins_model = "https://raw.githubusercontent.com/FarmerKE/mlops_lesson/master/pins-r/penguins_model/20240218T191540Z-9cdcc/"))
-v <- vetiver_pin_read(b, "penguins_model", version = "20240218T191540Z-9cdcc")
+pin_loc <- pins:::github_raw("FarmerKE/mlops_lesson/master/pins-r/_pins.yaml")
+b <- board_url(pin_loc)
+v <- vetiver_pin_read(b, "penguins_model")
 
 #* @plumber
 function(pr) {

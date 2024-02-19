@@ -137,13 +137,15 @@ v <- vetiver_model(
 pin_loc <- 
   pins:::github_raw("FarmerKE/mlops_lesson/master/pins-r/_pins.yaml")
 
-# board_register(name = "model_board", url = pin_loc)
-
 model_board <- pins:::board_url(pin_loc)
 model_board %>% vetiver_pin_write(v)
+
 model_board %>% 
   vetiver_write_plumber("penguins_model")
 write_board_manifest(model_board)
+
+model_board %>% 
+  vetiver_write_docker()
 
 
 
