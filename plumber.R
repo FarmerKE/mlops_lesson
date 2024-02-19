@@ -12,7 +12,7 @@ if (FALSE) {
     library(recipes)
     library(workflows)
 }
-b <- board_folder(path = "pins-r")
+b <- board_url(list(penguins_model = "https://raw.githubusercontent.com/FarmerKE/mlops_lesson/master/pins-r/penguins_model/20240218T191540Z-9cdcc/"))
 v <- vetiver_pin_read(b, "penguins_model", version = "20240218T191540Z-9cdcc")
 
 #* @plumber
